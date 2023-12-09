@@ -92,6 +92,7 @@ export const InputError = styled.input`
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 `
 export const Button = styled.button`
+font-family:cursive;
   background: transparent;
   border-radius: 3px;
   border: 2px solid black;
@@ -112,10 +113,12 @@ export const Form = styled.form`
   justify-content: center;
 `
 export const Description = styled.p`
+font-family:cursive;
   font-size: 10px;
   margin-top: 2px;
 `
 export const DescriptionSucces = styled.p`
+font-family:cursive;
   font-size: 10px;
   color: green;
   margin-top: 2px;
@@ -124,6 +127,7 @@ export const PError = styled.p`
   font-size: 10px;
   color: red;
   margin-top: 2px;
+  font-family:cursive;
 `
 export const Succes = styled.div`
   margin-top: 6px;

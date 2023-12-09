@@ -21,4 +21,5 @@ export const Link = styled.a`
   color: white;
   font-size: 20px;
   text-decoration: none;
-  font`
+  font-family:cursive;
+  `

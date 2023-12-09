@@ -22,6 +22,7 @@ export const Container = styled.div`
 `
 export const Title = styled.p`
   font-size: 15px;
+  font-family:cursive;
   @media (max-width: 550px) {
     font-size: 10px;
     text-align: center;
