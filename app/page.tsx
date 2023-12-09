@@ -27,6 +27,12 @@ const OperProd = styled.div`
   column-gap: 30px;
   row-gap:30px;
   flex-wrap: wrap;
+  @media (max-width: 416px) {
+    column-gap:10px;
+  }
+  @media (max-width: 373px) {
+    column-gap:2px;
+  }
 `
 
 export default function Home() {

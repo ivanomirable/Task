@@ -19,6 +19,18 @@ export const Container = styled.div`
     height: 100;
     width: 70%;
   }
+  @media (max-width: 416px) {
+    height: 50;
+    width: 70%;
+  }
+  @media (max-width: 416px) {
+    height: 50;
+    width: 70%;
+  }
+  @media (max-width: 373px) {
+    height: 40px;
+    width: 70%;
+  }
 `
 export const Title = styled.p`
   font-size: 15px;
