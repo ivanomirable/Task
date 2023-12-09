@@ -1,4 +1,5 @@
-'use-client'
+'use client'
+
 import Image from 'next/image'
 import styles from './page.module.css'
 import { IOperator } from '@/models'
@@ -7,7 +8,7 @@ import { operators } from '@/data/operator'
 import { Operator } from './operator/Operator'
 import { useMemo, useState } from 'react'
 import { PayForm } from './payForm/PayForm'
-import { useActiveContext } from '@/Context/context'
+import { useActiveContext } from '@/app/context'
 import { useToggle } from './hooks/Toggle'
 
 const OperProd = styled.div`

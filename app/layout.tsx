@@ -1,9 +1,10 @@
+'use client'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { TheHeader } from './components/Header'
 import { TheFooter } from './components/Footer'
 import { useState } from 'react'
-import { ActiveContext } from '@/Context/context'
+import { ActiveContext, ActiveContextProvider } from '@/app/context'
 import { IOperator } from '@/models'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -18,26 +19,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const [isActive, setIsActive] = useState(false)
-  const [operatore, setOperator] = useState<IOperator>({
-    id: 0,
-    title: '',
-    image: '',
-  })
-  const initialValues = {
-    isActive,
-    setIsActive,
-    operatore,
-    setOperator,
-  }
   return (
     <html lang="en">
       <body>
-        <ActiveContext.Provider value={initialValues}>
+        <ActiveContextProvider>
           <TheHeader />
           <main className="container"> {children}</main>
           <TheFooter />
-        </ActiveContext.Provider>
+        </ActiveContextProvider>
       </body>
     </html>
   )
