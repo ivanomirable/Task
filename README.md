@@ -30,4 +30,4 @@ To learn more about Next.js, take a look at the following resources:
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
-Ссылка на демо версию приложения:https://task-mu-one.vercel.app/
+Ссылка на демо версию приложения:https://task-3-gilt.vercel.app/
