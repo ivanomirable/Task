@@ -58,7 +58,7 @@ export const PayForm = () => {
     }
   }
 
-  const handlePhoneChange = (e: any) => {
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const input = e.target.value.replace(/\D/g, '')
     const formattedPhone = formatPhone(input)
     setPhone(formattedPhone)
@@ -83,14 +83,14 @@ export const PayForm = () => {
     return /^\(\d{3}\) \d{3}-\d{2}-\d{2}$/.test(phone)
   }
 
-  const handleInputChange = (event: any) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const input = event.target.value
 
     // Оставляем только цифры
     const filteredInput = input.replace(/[^0-9]/g, '')
 
     // Устанавливаем максимальную сумму 1000 рублей
-    if (filteredInput > 1000) {
+    if (Number(filteredInput) > 1000) {
       setAmount('1000')
     } else {
       setAmount(filteredInput)
