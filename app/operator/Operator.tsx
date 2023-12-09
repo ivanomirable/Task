@@ -1,4 +1,3 @@
-'use client'
 import { useActiveContext } from '@/Context/context'
 import { IOperator } from '@/models'
 import { useToggle } from '../hooks/Toggle'
