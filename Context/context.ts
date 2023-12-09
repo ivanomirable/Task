@@ -1,4 +1,4 @@
-
+'use client' 
 import { IOperator } from "@/models"
 import { Dispatch, SetStateAction, useContext,createContext, } from "react"
 
