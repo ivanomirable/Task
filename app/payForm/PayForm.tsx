@@ -8,11 +8,9 @@ import {
   ModalContent,
   Div,
   Input,
-  InputSucess,
   Button,
   Form,
   Description,
-  DescriptionSucces,
   Succes,
   Img,
 } from './styles'
@@ -38,6 +36,8 @@ export const PayForm = () => {
   // Эмуляция успешного и неуспешного ответа при нажатии на кнопку
   const handleMockButtonClick = async () => {
     try {
+      setResponse('Ждите..')
+      setDisabled(true)
       const { data } = await axios.get(
         'https://jsonplaceholder.typicode.com/posts',
       )
@@ -50,6 +50,7 @@ export const PayForm = () => {
             setTimeout(Timer, 2000)
           }, 1000)
         } else {
+          setDisabled(false)
           setResponse('Что-то пошло не так')
         }
       }
@@ -115,48 +116,26 @@ export const PayForm = () => {
             <Img src={operatore.image} />
             <div>{operatore.title}</div>
             <Form onSubmit={test}>
-              {validatePhone() ? (
-                <>
-                  <InputSucess
-                    type="tel"
-                    value={phone}
-                    onChange={handlePhoneChange}
-                  />
-                  <DescriptionSucces>Номер телефона валидный</DescriptionSucces>
-                </>
-              ) : (
-                <div>
-                  <>
-                    <Input
-                      type="tel"
-                      value={phone}
-                      onChange={handlePhoneChange}
-                    />
-                    <Description>Введите свой номер телефона</Description>
-                  </>
-                </div>
-              )}
-              {sumValidate() ? (
-                <>
-                  <InputSucess
-                    type="tel"
-                    value={amount}
-                    onChange={handleInputChange}
-                  />
-                  <DescriptionSucces>Cумма валидна</DescriptionSucces>
-                </>
-              ) : (
-                <div>
-                  <>
-                    <Input
-                      type="tel"
-                      value={amount}
-                      onChange={handleInputChange}
-                    />
-                    <Description>Введите сумму от 1 до 1000 руб.</Description>
-                  </>
-                </div>
-              )}
+              <Input
+                color={validatePhone() ? '1px solid green' : '1px solid black'}
+                type="tel"
+                value={phone}
+                onChange={handlePhoneChange}
+              />
+              <Description color={validatePhone() ? 'green' : ''}>
+                {validatePhone() ? 'Номер валидный' : 'Введите номер телефона'}
+              </Description>
+
+              <Input
+                color={sumValidate() ? '1px solid green' : '1px solid black'}
+                type="tel"
+                value={amount}
+                onChange={handleInputChange}
+              />
+              <Description color={sumValidate() ? 'green' : ''}>
+                {sumValidate() ? 'Отлично' : 'Введите сумму от 1 до 1000 руб.'}
+              </Description>
+
               <>
                 {validatePhone() && sumValidate() ? (
                   <Button onClick={() => Validate()} disabled={disabled}>

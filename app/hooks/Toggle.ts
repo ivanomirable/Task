@@ -1,7 +1,6 @@
 'use client' 
 import { useState } from "react"
 
-
 export const useToggle = (defaultValue = false) => {
     const [isVisible, setIsVisible] = useState(defaultValue)
   
